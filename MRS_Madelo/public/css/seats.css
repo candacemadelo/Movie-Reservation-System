@@ -1,0 +1,351 @@
+#legend img{
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.seat input{
+  -webkit-appearance: none;
+  background-image: url("../images/seat.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  outline: none;
+  background-color: 
+}
+
+input::before{
+  background-image: url('../images/seat.png');
+}
+
+input:checked{
+  background-image: url('../images/selected.png');
+}
+
+input:disabled{
+    background-image:url('../images/reserved.png')!important;
+}
+
+#count, #modalcount{
+  background-color: transparent;
+  border: none;
+}
+
+.w3ls-reg {
+    width: 800px;
+    height: 950px;
+/*    margin: 0 1vw;*/
+    background: rgba(128, 128, 128, 0.34);
+    padding-top: 50px;
+    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    display: -webkit-flex;
+    display: inline-block;
+    flex-wrap: wrap;
+}
+
+.d-flex-screen {
+        max-width: 100%;
+        margin: 10px;
+        text-align: center
+        
+    }
+
+.d-flex-legend {
+    max-width: 100%;
+        margin: 10px;
+        text-align: center
+}
+
+/*Iphone 5*/
+@media (min-width: 320px) and (max-width: 359px){
+    .w3ls-reg  {
+        max-width: 100%;
+        height: 850px;
+        position: relative;
+        padding: 0px;
+        margin: 15px;
+  }
+    
+    .d-flex-screen {
+        max-width: 100%;
+        margin: 10px;
+        text-align: center
+        
+    }
+    
+    .table-dark  {
+        max-width: 100%;
+        height: auto;
+        padding: 0;
+        font-size: 12px;
+        margin-top: 20px;
+    }
+    
+    .seat input{
+        -webkit-appearance: none;
+        background-image: url("../images/seat.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 23px;
+        width: 23px;    
+        padding: 0px;
+        outline: none;
+    }
+    
+    .seat {
+        position: absolute;
+        margin-left: 0px;
+        padding: 2px;
+    }
+    
+    input::before{
+      background-image: url('../images/seat.png');
+    }
+
+    input:checked{
+      background-image: url('../images/selected.png');
+    }
+
+
+    #count, #modalcount{
+      background-color: transparent;
+      border: none;
+    }
+}
+
+/*Moto G4, Galaxy S5*/
+@media (min-width: 360px) and (max-width: 374px) {
+    .w3ls-reg  {
+        max-width: 100%;
+        height: 860px;
+        position: relative;
+        padding: 0px;
+        margin: 15px;
+        justify-content: center;
+        align-items: center;          
+  }
+    
+    .table-dark  {
+        max-width: 100%;
+        height: auto;
+        padding: 0px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    
+    .seat input{
+        -webkit-appearance: none;
+        background-image: url("../images/seat.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 28px;
+        width: 28px;    
+        padding: 0px;
+        outline: none;
+    }
+    
+    .seat {
+        position: absolute;
+        margin-left: 0px;
+        padding: 2px;
+    }
+    
+    input::before{
+      background-image: url('../images/seat.png');
+    }
+
+    input:checked{
+      background-image: url('../images/selected.png');
+    }
+
+
+    #count, #modalcount{
+      background-color: transparent;
+      border: none;
+    }
+    
+    .d-flex-screen {
+        max-width: 100%;
+        margin: 10px;
+        text-align: center
+    }
+}
+
+/*Iphone 6/7/8*/
+@media (min-width: 375px) and (max-width: 410px) {
+     .w3ls-reg  {
+        max-width: 100%;
+        height: 860px;
+        position: relative;
+        padding: 0px;
+        margin: 15px;
+  }
+    
+    .d-flex-screen {
+        max-width: 100%;
+        margin: 10px;
+        text-align: center
+        
+    }
+    
+    .table-dark  {
+        max-width: 100%;
+        height: auto;
+        padding: 0px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    
+    .seat input{
+        -webkit-appearance: none;
+        background-image: url("../images/seat.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 29px;
+        width: 29px;    
+        padding: 0px;
+        outline: none;
+    }
+    
+    .seat {
+        position: absolute;
+        margin-left: 0px;
+        padding: 2px;
+    }
+    
+    input::before{
+      background-image: url('../images/seat.png');
+    }
+
+    input:checked{
+      background-image: url('../images/selected.png');
+    }
+
+
+    #count, #modalcount{
+      background-color: transparent;
+      border: none;
+    }
+}
+
+/*Pixel 2/2 XL, Iphone 6/7/8+*/
+@media (min-width: 411px) and (max-width: 414px) {
+     .w3ls-reg  {
+        max-width: 100%;
+        height: 875px;
+        position: relative;
+        padding: 0px;
+        margin: 15px;
+  }
+    
+    .d-flex-screen {
+        max-width: 100%;
+        margin: 10px;
+        text-align: center
+        
+    }
+    
+    .table-dark  {
+        max-width: 100%;
+        height: auto;
+        padding: 0px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    
+    .seat input{
+        -webkit-appearance: none;
+        background-image: url("../images/seat.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 34px;
+        width: 34px;    
+        padding: 0px;
+        outline: none;
+    }
+    
+    .seat {
+        position: absolute;
+        margin-left: 0px;
+        padding: 2px;
+    }
+    
+    input::before{
+      background-image: url('../images/seat.png');
+    }
+
+    input:checked{
+      background-image: url('../images/selected.png');
+    }
+
+
+    #count, #modalcount{
+      background-color: transparent;
+      border: none;
+    }
+}
+
+
+
+/*
+Iphone 6,7,8
+@media (min-width: 375px) and (max-width: 667px)  { 
+  .w3ls-reg  {
+        max-width: 100%;
+        height: 900px;
+        position: relative;
+        padding: 0px;
+        margin: 15px;
+  }
+    
+    .d-flex-screen {
+        max-width: 100%;
+        margin: 10px;
+        text-align: center
+        
+    }
+    
+    .table-dark  {
+        max-width: 100%;
+        height: auto;
+        padding: 0;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    
+    .seat input{
+        -webkit-appearance: none;
+        background-image: url("../images/seat.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 30px;
+        width: 30px;    
+        padding: 0px;
+        outline: none;
+    }
+    
+    .seat {
+        position: absolute;
+        margin-left: 0px;
+        padding: 2px;
+    }
+    
+    input::before{
+      background-image: url('../images/seat.png');
+    }
+
+    input:checked{
+      background-image: url('../images/selected.png');
+    }
+
+
+    #count, #modalcount{
+      background-color: transparent;
+      border: none;
+    }
+}
+*/
+

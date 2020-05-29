@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Cinemaworld | Seats</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Oswald:400,700">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/mediaelementplayer.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/fl-bigmug-line.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/seats.css">
+</head>
+
+<body>
+    
+<!--Navbar-->
+    <nav class="navbar navbar-dark sticky-top navbar-expand-lg navbar-light" style="background-color: #222831">
+      <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0"><strong>CINEMAWORLD<span class="text-primary">.</span></strong></a></h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end pr-5" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link text-light pr-4" href="index.html">Now Showing<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Hi, Jane Doe!
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="dashboard.html">Your Reservations</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<!-- Navbar -->
+
+<!--Breadcrumbs-->
+   <nav class="pt-3" aria-label="breadcrumb" data-aos="fade" data-aos-delay="100">
+       <ol class="breadcrumb bg-transparent">
+           <li class="breadcrumb-item"><a href="index.html" class="text-secondary">Movies</a></li>
+           <li class="breadcrumb-item"><a href="reservation.html" class="text-secondary">Schedules</a></li>
+           <li class="breadcrumb-item text-primary font-weight-bold" aria-current="page">Seats</li>
+       </ol>
+    </nav>
+<!--Breadcrumbs-->
+
+<!--Seat Plan--> 
+<div class="container1 pb-5" data-aos="fade-down" data-aos-delay="100">
+    <div class="w3ls-reg">          
+        <div class="d-flex-screen p-2 bd-highlight bg-light text-dark justify-content-center font-italic align-text-top" style="height: 45px">Screen</div>
+        
+        <div class="d-flex bd-highlight text-light pt-4 pb-4">
+          <div class="smallBox greenBox p-2 flex-fill bd-highlight">Selected Seat</div>
+          <div class="smallBox emptyBox p-2 flex-fill bd-highlight text-center">Reserved Seat</div>
+          <div class="smallBox redBox p-2 flex-fill bd-highlight text-right">Empty Seat</div>
+        </div>
+    
+        <div class= "seat" style="text-align: center;">
+               <table class="table table-dark">
+            <thead>
+              <tr>
+                <h3 class="text-white text-center">Seat Selection</h3></tr>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">1</th>
+                <th scope="col">2</th>
+                <th scope="col">3</th>
+                <th scope="col">4</th>
+                <th scope="col">5</th>
+                <th scope="col">6</th>
+                <th scope="col">7</th>
+                <th scope="col">8</th>
+              </tr>
+            </thead>
+            <tbody>
+              <form>
+              <tr>
+                <th scope="row" class="align-center">A</th>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="A1" name="select_seat"  value="A1"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="A2" name="select_seat" value="A2"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="A3" name="select_seat" value="A3"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="A4" name="select_seat" value="A4"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="A5" name="select_seat" value="A5"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="A6" name="select_seat" value="A6"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="A7" name="select_seat" value="A7"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="A8" name="select_seat" value="A8"/></td>
+              </tr>
+              <tr>
+                <th scope="row">B</th>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="B1" name="select_seat" value="B1"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="B2" name="select_seat" value="B2"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="B3" name="select_seat" value="B3"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="B4" name="select_seat" value="B4"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="B5" name="select_seat" value="B5"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="B6" name="select_seat" value="B6"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="B7" name="select_seat" value="B7"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="B8" name="select_seat" value="B8"/></td>
+              </tr>
+              <tr>
+                <th scope="row">C</th>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="C1" name="select_seat" value="C1"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="C2" name="select_seat" value="C2"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="C3" name="select_seat" value="C3"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="C4" name="select_seat" value="C4"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="C5" name="select_seat" value="C5"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="C6" name="select_seat" value="C6"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="C7" name="select_seat" value="C7"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="C8" name="select_seat" value="C8"/></td>
+              </tr>
+              <tr>
+                <th scope="row">D</th>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="D1" name="select_seat" value="D1"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="D2" name="select_seat" value="D2"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="D3" name="select_seat" value="D3"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="D4" name="select_seat" value="D4"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="D5" name="select_seat" value="D5"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="D6" name="select_seat" value="D6"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="D7" name="select_seat" value="D7"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="D8" name="select_seat" value="D8"/></td>
+              </tr>
+              <tr>
+                <th scope="row">E</th>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="E1" name="select_seat" value="E1"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="E2" name="select_seat" value="E2"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="E3" name="select_seat" value="E3"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="E4" name="select_seat" value="E4"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="E5" name="select_seat" value="E5"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="E6" name="select_seat" value="E6"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="E7" name="select_seat" value="E7"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="E8" name="select_seat" value="E8"/></td>
+              </tr>
+               <tr>
+                <th scope="row">F</th>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="F1" name="select_seat" value="F1"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="F2" name="select_seat" value="F2"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="F3" name="select_seat" value="F3"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="F4" name="select_seat" value="F4"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="F5" name="select_seat" value="F5"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="F6" name="select_seat" value="F6"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="F7" name="select_seat" value="F7"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="F8" name="select_seat" value="F8"/></td>
+              </tr>
+               <tr>
+                <th scope="row">G</th>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="G1" name="select_seat" value="G1"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="G2" name="select_seat" value="G2"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="G3" name="select_seat" value="G3"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="G4" name="select_seat" value="G4"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="G5" name="select_seat" value="G5"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="G6" name="select_seat" value="G6"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="G7" name="select_seat" value="G7"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="G8" name="select_seat" value="G8"/></td>
+              </tr>
+               <tr>
+                <th scope="row">H</th>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="H1" name="select_seat" value="H1"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="H2" name="select_seat" value="H2"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="H3" name="select_seat" value="H3"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="H4" name="select_seat" value="H4"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="H5" name="select_seat" value="H5"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="H6" name="select_seat" value="H6"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="H7" name="select_seat" value="H7"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="H8" name="select_seat" value="H8"/></td>
+              </tr>
+               <tr>
+                <th scope="row">I</th>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="I1" name="select_seat" value="I1"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="I2" name="select_seat" value="I2"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="I3" name="select_seat" value="I3"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="I4" name="select_seat" value="I4"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="I5" name="select_seat" value="I5"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="I6" name="select_seat" value="I6"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="I7" name="select_seat" value="I7"/></td>
+                <td class="p-1 m-0"><input type="checkbox" onclick= "getSeats()" class= "res_seat" id="I8" name="select_seat" value="I8"/></td>
+              </tr>
+              </form>
+            </tbody>
+          </table>
+                <div class="container3">
+                  <div class="text-center">
+                      <a href="checkout.html">
+                        <button class="btn btn-primary btn-lg " onclick="updateTextArea()">Confirm Selection</button>
+                      </a>
+                  </div>
+                </div>
+            </div>
+    </div>
+</div>
+      <!--Seat Plan-->
+    
+    
+<div class="bg-primary" data-aos="fade">
+      <div class="container">
+        <div class="row">
+          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-facebook text-white"></span></a>
+          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-twitter text-white"></span></a>
+          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-instagram text-white"></span></a>
+          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-linkedin text-white"></span></a>
+          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-pinterest text-white"></span></a>
+          <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-youtube text-white"></span></a>
+        </div>
+      </div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="mb-5">
+            <h3 class="footer-heading mb-4">About Cinemaworld</h3>
+            <p1>CinemaWorld offers the latest movies where everyone can enjoy. One ticket for endless memories. Book your tickets now!</p1>
+          </div>
+         
+        </div>
+        <div class="col-sm-4">
+          <div class="row ml-6">
+            <div class="col-md-6">
+              <h3 class="footer-heading mb-4">Contact Us</h3>
+            </div>
+            <div class="col-md-8">
+              <ul class="list-unstyled">
+                <li>PHONE : 553 - 4899</li>
+                <li>EMAIL : cinemaworld@sekai.com</li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-ml-0">
+          <div class="mb-0">
+            <h3 class="footer-heading mb-4">Follow Us</h3>
+
+            <div>
+                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="row text-center">
+        <div class="col-md-12">
+          <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+            <script>document.write(new Date().getFullYear());</script> All rights reserved 
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/mediaelement-and-player.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/circleaudioplayer.js"></script>
+
+  <script src="js/main.js"></script>
+  <script src="js/reservation.js"></script>
+  <script src="js/seatSelect.js"></script>
+
+</body>
+
+</html>

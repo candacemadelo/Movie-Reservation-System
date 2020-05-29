@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Cinemaworld | Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Oswald:400,700">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/mediaelementplayer.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/fl-bigmug-line.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body onload="initDashboardInfo()">
+    
+<!--Navbar-->
+    <nav class="navbar navbar-dark sticky-top navbar-expand-lg navbar-light" style="background-color: #222831">
+        <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0"><strong>CINEMAWORLD<span class="text-primary">.</span></strong></a></h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end pr-5" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link text-light pr-4" href="index.html">Now Showing<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Hi, Jane Doe!
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Your Reservations</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<!--Navbar-->
+    
+<!-- User Info and Reservations -->
+    <div class="container-fluid pt-4" data-aos="fade-down" data-aos-delay="100">
+        <div class="row px-3 pb-5">
+            
+            <!-- User Info -->
+            <div class="col-sm-12 col-md-12 col-lg-4 pt-4">
+                <div class="card w-100 h-100 px-0" style="height: 550px">
+                    <div class="card-body">
+                        <div class="mx-5 my-5">
+                            <img src="images/user.png" class="img-fluid">
+                        </div>
+                        <div class="text-center text-dark">
+                            <h3 class="font-weight-bold pb-3">
+                                JANE DOE
+                            </h3>
+                            <div class="text-detail pb-5" id="resCounter">
+                                Hi, there! You have n reservations.
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- User Info -->
+
+            <!-- User Reservations -->
+            <div class="col-sm-12 col-md-12 col-lg-8 pt-4">
+                <div class="card w-100 h-100 px-0" style="height: 550px">
+                    <div class="card-body text-dark pt-5">
+                        <table class="table table-hover table-light text-dark text-center align-middle" id="reservations">
+                            <h3 class="font-weight-bold pb-5 pt-2 text-center">YOUR RESERVATIONS</h3>
+                              <thead class="pt-3">
+                                <tr>
+                                    <th scope="col">MOVIE TITLE</th>
+                                    <th scope="col">SCHEDULE</th>
+                                    <th scope="col">CINEMA</th>
+                                    <th scope="col"></th>
+                                </tr>
+                              </thead>
+<!--
+                                <tr>
+                                  <th scope="row">1</th>
+                                    <td class="text-capitalize">Lorem ipsum dolor sit amet</td> 
+                                    <td>Schedule 1</td>
+                                    <td>Cinema 1</td>
+                                    <td>
+                                        <button type="button" class="btn btn-success text-white" data-toggle="modal" data-target="#detailsModal">Details</button>
+                                    </td> 
+                                </tr>
+-->
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- User Reservations -->
+        </div>
+    </div>
+<!-- User Info and Reservations -->
+    
+    
+<!-- Details Modal -->
+    <div id="detailsModal" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered modal-confirm col-sm-12 mx-auto w-100">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col pb-5">
+                            <h4 class="text-uppercase" id="movieTitle">lorem ipsum dolor sit amet consectetur</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="pr-2">
+                            <div class="font-weight-bold">Transaction No.:</div>
+                        </div>
+                        <div>
+                            <div>
+                                <p id="transacNum"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="pr-2">
+                            <div class="font-weight-bold">No. of Admissions:</div>
+                        </div>
+                        <div>
+                            <div>
+                                <p id="admissions"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="pr-2">
+                            <div class="font-weight-bold">Seats:</div>
+                        </div>
+                        <div>
+                            <div>
+                                <p id="seats"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="pr-2">
+                            <div class="font-weight-bold">Total:</div>
+                        </div>
+                        <div>
+                            <div>
+                                <p id="total"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="container pt-4">
+                        <div class="row pb-2">
+                            <div class="col">
+                                <button class="btn btn-danger btn-block" data-dismiss="modal" data-toggle="modal" data-target="#confirmModal">Cancel Reservation</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-secondary btn-block text-dark" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>   
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </div>  
+<!-- Details Modal -->
+    
+<!-- Confirmation Modal -->
+    <div id="confirmModal" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered modal-confirm col-sm-12 mx-auto w-100">
+            <div class="modal-content">
+                <div class="pb-4 pt-2">
+                    <div class="icon-box-alert">
+                        <i class="fas fa-exclamation"></i>
+                    </div>				
+                    <h4 class="text-center">Oops!</h4>	
+                </div>
+                <div class="modal-body pt-3">
+                    <p>Are you sure you want to cancel this reservation?</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="container pt-4">
+                        <div class="row pb-2">
+                            <div class="col">
+                                <button class="btn btn-danger btn-block" data-dismiss="modal" data-toggle="modal" data-target="#cancelledModal" id="confirmCancel" onclick="cancelReservation()">Confirm</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-secondary btn-block text-dark" data-dismiss="modal">Back</button>
+                            </div>
+                        </div>  
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>  
+<!-- Confirmation Modal -->
+ 
+<!-- Cancellation Modal -->
+    <div id="cancelledModal" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered modal-confirm col-sm-12 mx-auto w-100">
+            <div class="modal-content">
+                <div class="pb-4 pt-2">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>				
+                    <h4 class="text-center">As you wish.</h4>	
+                </div>
+                <div class="modal-body pt-3">
+                    <p>Your reservation has been cancelled.</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="container pt-4">
+                        <div class="row pb-2">
+                            <div class="col">
+                                <button class="btn btn-success btn-hover btn-block" data-dismiss="modal" style="background: #82ce34;">OK</button>   
+                            </div>
+                        </div>  
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>  
+<!-- Cancellation Modal -->
+    
+    
+<!--Social Media Banner-->
+  <div class="bg-primary" data-aos="fade">
+    <div class="container">
+      <div class="row">
+        <a href="#" class="col-2 text-center py-4 social-icon d-block"><span
+            class="icon-facebook text-white"></span></a>
+        <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-twitter text-white"></span></a>
+        <a href="#" class="col-2 text-center py-4 social-icon d-block"><span
+            class="icon-instagram text-white"></span></a>
+        <a href="#" class="col-2 text-center py-4 social-icon d-block"><span
+            class="icon-linkedin text-white"></span></a>
+        <a href="#" class="col-2 text-center py-4 social-icon d-block"><span
+            class="icon-pinterest text-white"></span></a>
+        <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-youtube text-white"></span></a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="mb-5">
+            <h3 class="footer-heading mb-4">About Cinemaworld</h3>
+            <p1>CinemaWorld offers the latest movies where everyone can enjoy. One ticket for endless memories. Book your tickets now!</p1>
+          </div>
+         
+        </div>
+        <div class="col-sm-4">
+          <div class="row ml-6">
+            <div class="col-md-6">
+              <h3 class="footer-heading mb-4">Contact Us</h3>
+            </div>
+            <div class="col-md-8">
+              <ul class="list-unstyled">
+                <li>PHONE : 553 - 4899</li>
+                <li>EMAIL : cinemaworld@sekai.com</li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-ml-0">
+          <div class="mb-0">
+            <h3 class="footer-heading mb-4">Follow Us</h3>
+
+            <div>
+                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="row text-center">
+        <div class="col-md-12">
+          <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+            <script>document.write(new Date().getFullYear());</script> All rights reserved 
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  </div>
+
+    
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/mediaelement-and-player.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/circleaudioplayer.js"></script>
+    
+    <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="js/dashboard.js"></script> 
+
+</body>
+
+</html>

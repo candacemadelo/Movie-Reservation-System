@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Cinemaworld</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Oswald:400,700">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/mediaelementplayer.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/fl-bigmug-line.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body onload="checkoutInfo()">
+    
+<!--Navbar-->
+    <nav class="navbar navbar-dark sticky-top navbar-expand-lg navbar-light" style="background-color: #222831">
+        <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0"><strong>CINEMAWORLD<span class="text-primary">.</span></strong></a></h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end pr-5" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link text-light pr-4" href="index.html">Now Showing<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Hi, Jane Doe!
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Your Reservations</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<!--Navbar-->
+    
+    
+<!--Breadcrumbs-->
+   <nav class="pt-3" aria-label="breadcrumb" data-aos="fade" data-aos-delay="100">
+       <ol class="breadcrumb bg-transparent">
+           <li class="breadcrumb-item"><a href="index.html" class="text-secondary">Movies</a></li>
+           <li class="breadcrumb-item"><a href="reservation.html" class="text-secondary">Schedules</a></li>
+           <li class="breadcrumb-item"><a href="seat_selection.html" class="text-secondary">Seats</a></li>
+           <li class="breadcrumb-item text-primary font-weight-bold" aria-current="page">Checkout</li>
+       </ol>
+    </nav>
+<!--Breadcrumbs-->
+    
+    
+<!--Checkout Info-->
+    <main class="pt-4 pb-5" data-aos="fade-down" data-aos-delay="100">
+        <section>
+            <div class="container">
+                <div class="content">
+                    <div class="row">
+                        <div class=" col-sm-12 col-md-12 col-lg-8 pb-2">
+                            <div class="card">
+                                <div class="card-body text-dark">
+                                    <h3 class="font-weight-bold pb-4 pt-2 text-center">DETAILS</h3>
+                                    <div class="pl-4 pr-4">
+                                        <div class="d-flex flex-column pt-4 pb-3">
+                                            <div class="text-gray-small">Movie Title</div>
+                                            <div id = "movieTitle" class="text-detail-title">Lorem ipsum dolor sit amet consectetur</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-lg-8">
+                                                <div class="d-flex flex-column">
+                                                        <div class="text-gray-small">Schedule</div>
+                                                        <div id = "sched" class="text-detail">01/01/020 8:00-9:15</div>
+                                                        <div class="text-gray-small pt-2">Seats Selected</div>
+                                                        <div id = "resSeat" class="text-detail pb-4">A1, A2, A3</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-lg-4">
+                                                <div class="d-flex flex-column">
+                                                        <div class="text-gray-small">Cinema</div>
+                                                        <div id="cinemaNum" class="text-detail">Cinema 1</div>
+                                                        <div class="text-gray-small pt-2">Quantity</div>
+                                                        <div id="numOfSeats" class="text-detail pb-4    ">3</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!--DISCOUNT-->
+<!--
+                                    <div class="pt-5 pl-4 pr-4 pb-3">
+                                        <h5 class="font-weight-bold pb-4 pt-2">Discounts</h5>
+                                        
+                                        <div class="alert alert-success" role="alert">
+                                            Persons with Disabilities and Senior Citizens are entitled to a 20% discount on their admissions. Please enter number of Persons with Disabilities and/or Senior Citizens included in this transaction.
+                                        </div>
+                                        
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <label class="sr-only" for="inlineFormInputGroup">PWD</label>
+                                                    <div class="input-group col-md-12 col-sm-12 mb-2 pl-0">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">PWD</div>
+                                                        </div>
+                                                        <input type="number" id="PWD" placeholder="0">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <label class="sr-only" for="inlineFormInputGroup">SC</label>
+                                                    <div class="input-group col-md-12 col-sm-12 mb-2 pl-0">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">Senior Citizen</div>
+                                                        </div>
+                                                        <input type="number" id="SC" placeholder="0">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+-->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CHECKOUT SUMMARY -->
+                        <div class="col-md-12 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="summary text-dark">
+                                        <h3 class="font-weight-bold pb-4 pt-2 text-center">SUMMARY</h3>
+                                        <div class="row pt-3 pb-5">
+                                            <!--Item Column-->
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="text-summary font-weight-bold">Transaction #</div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="text-summary font-weight-bold text-right" id="trans_num">00001</div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="text-summary">Subtotal</div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div id= "price" class="text-summary text-right" id="subtotal_price">Php 123.00</div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="text-summary">Discount</div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="text-summary text-right" id="discount_price">- Php 0.00</div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="text-summary font-weight-bold text-uppercase">Total</div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div id="priceTotal" class="text-summary font-weight-bold text-uppercase text-right" id="total_price">Php 123.00</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#successModal">Checkout</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </main>
+<!--Checkout Info-->
+    
+<!-- Success Modal -->
+    <div id="successModal" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered modal-confirm col-sm-12 mx-auto w-100">
+            <div class="modal-content">
+                <div class="pb-4 pt-2">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>              
+                    <h4 class="text-center">Awesome!</h4>   
+                </div>
+                <div class="modal-body pt-3">
+                    <p>Your booking has been confirmed.</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn-block" role="button" href="dashboard.html">
+                        <button class="btn btn-success btn-hover btn-block" style="background: #82ce34;">OK</button>   
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>  
+<!-- Success Modal -->
+    
+<!--Social Media Banner-->
+  <div class="bg-primary" data-aos="fade">
+    <div class="container">
+      <div class="row">
+        <a href="#" class="col-2 text-center py-4 social-icon d-block"><span
+            class="icon-facebook text-white"></span></a>
+        <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-twitter text-white"></span></a>
+        <a href="#" class="col-2 text-center py-4 social-icon d-block"><span
+            class="icon-instagram text-white"></span></a>
+        <a href="#" class="col-2 text-center py-4 social-icon d-block"><span
+            class="icon-linkedin text-white"></span></a>
+        <a href="#" class="col-2 text-center py-4 social-icon d-block"><span
+            class="icon-pinterest text-white"></span></a>
+        <a href="#" class="col-2 text-center py-4 social-icon d-block"><span class="icon-youtube text-white"></span></a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="mb-5">
+            <h3 class="footer-heading mb-4">About Cinemaworld</h3>
+            <p1>CinemaWorld offers the latest movies where everyone can enjoy. One ticket for endless memories. Book your tickets now!</p1>
+          </div>
+         
+        </div>
+        <div class="col-sm-4">
+          <div class="row ml-6">
+            <div class="col-md-6">
+              <h3 class="footer-heading mb-4">Contact Us</h3>
+            </div>
+            <div class="col-md-8">
+              <ul class="list-unstyled">
+                <li>PHONE : 553 - 4899</li>
+                <li>EMAIL : cinemaworld@sekai.com</li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-ml-0">
+          <div class="mb-0">
+            <h3 class="footer-heading mb-4">Follow Us</h3>
+
+            <div>
+                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="row text-center">
+        <div class="col-md-12">
+          <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+            <script>document.write(new Date().getFullYear());</script> All rights reserved 
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/mediaelement-and-player.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/circleaudioplayer.js"></script>
+    
+    <script src="js/main.js"></script>
+    <script src="js/reservation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

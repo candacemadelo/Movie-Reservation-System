@@ -1,0 +1,155 @@
+<%- include('partials/header') %>  
+<!--last: style.css-->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    
+<%- include('partials/navbar') %>
+    
+<!--Breadcrumbs-->
+   <nav class="pt-3" aria-label="breadcrumb" data-aos="fade" data-aos-delay="100">
+       <ol class="breadcrumb bg-transparent">
+           <li class="breadcrumb-item"><a href="/movies" class="text-secondary">Movies</a></li>
+           <li class="breadcrumb-item"><a href="reservation.html" class="text-secondary">Schedules</a></li>
+           <li class="breadcrumb-item"><a href="seat_selection.html" class="text-secondary">Seats</a></li>
+           <li class="breadcrumb-item text-primary font-weight-bold" aria-current="page">Reservation</li>
+       </ol>
+    </nav>
+<!--Breadcrumbs-->
+    
+    
+<!--Checkout Info-->
+    <main class="pt-4 pb-5" data-aos="fade-down" data-aos-delay="100">
+        <section>
+            <div class="container">
+                <div class="content">
+                    <div class="row">
+                        <div class=" col-sm-12 col-md-12 col-lg-8 pb-2">
+                            <div class="card">
+                                <div class="card-body text-dark">
+                                    
+                                    <h3 class="font-weight-bold pb-4 pt-2 text-center">DETAILS</h3>
+                                    <div class="pl-4 pr-4">
+                                        <div class="d-flex flex-column pt-4 pb-3">
+                                            <div class="text-gray-small">Movie Title</div>
+                                            <div id = "movieTitle" class="text-detail-title"><%= foundMovie.title %></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-lg-8">
+                                                <div class="d-flex flex-column">
+                                                        <div class="text-gray-small">Schedule</div>
+                                                        <div id = "sched" class="text-detail"><%= foundSched.sched %></div>
+                                                        <div class="text-gray-small pt-2">Seats Selected</div>
+                                                        <div id = "resSeat" class="text-detail pb-4"><%= get_seats %></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-lg-4">
+                                                <div class="d-flex flex-column">
+                                                        <div class="text-gray-small">Cinema</div>
+                                                        <div id="cinemaNum" class="text-detail"><%= "Cinema " + foundSched.cinema %></div>
+                                                        <div class="text-gray-small pt-2">Quantity</div>
+                                                        <div id="numOfSeats" class="text-detail pb-4"><%= get_seats.split(",").length %></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                       
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CHECKOUT SUMMARY -->
+                        <div class="col-md-12 col-lg-4 pb-2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="summary text-dark">
+                                        <h3 class="font-weight-bold pb-3 pt-2 text-center">SUMMARY</h3>
+                                        <div class="row pt-3 pb-5" style="margin-top: 10px;">
+                                            <!--Item Column-->
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="text-summary">Price</div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div id= "price" class="text-summary text-right" id="price"><%= "Php " +  foundSched.price%></div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="text-summary">Subtotal</div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div id= "price" class="text-summary text-right" id="subtotal_price"><%= "Php " +  get_seats.split(",").length * foundSched.price%></div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="text-summary">Discount</div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="text-summary text-right" id="discount_price">- Php 0.00</div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="text-summary font-weight-bold text-uppercase">Total</div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div id="priceTotal" class="text-summary font-weight-bold text-uppercase text-right" id="total_price"><%= "Php" +  get_seats.split(",").length * foundSched.price%></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="/movies/seats/reservations/dashboard">
+                                            <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#successModal">Go to Dashboard</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </main>
+<!--Checkout Info-->
+ 
+ 
+    
+<!-- Success Modal -->
+    <div id="successModal" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered modal-confirm col-sm-12 mx-auto w-100">
+            <div class="modal-content">
+                <div class="pb-4 pt-2">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>              
+                    <h4 class="text-center">Awesome!</h4>   
+                </div>
+                <div class="modal-body pt-3">
+                    <p>Your booking has been confirmed.</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn-block" role="button" href="dashboard.html">
+                        <button class="btn btn-success btn-hover btn-block" style="background: #82ce34;">OK</button>   
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>  
+<!-- Success Modal -->
+    
+<!--Social Media Banner-->
+    <%- include('partials/footer') %>
+    <script src="js/reservation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

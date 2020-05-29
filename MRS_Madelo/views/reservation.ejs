@@ -1,0 +1,106 @@
+<%- include('partials/header') %>  
+<!--last: styles.css-->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/tables.css">
+
+</head>
+
+<body>
+    
+<%- include('partials/navbar') %>    
+    
+<!--Breadcrumbs-->
+   <nav class="pt-3" aria-label="breadcrumb" data-aos="fade" data-aos-delay="100">
+       <ol class="breadcrumb bg-transparent">
+           <li class="breadcrumb-item"><a href="/movies" class="text-secondary">Movies</a></li>
+           <li class="breadcrumb-item text-primary font-weight-bold" aria-current="page">Schedules</li>
+       </ol>
+    </nav>
+<!--Breadcrumbs-->
+    
+    
+<!--Movie Info-->
+  <div class="site-mobile-menu">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div> <!-- .site-mobile-menu -->
+
+  <div class="pt-2">
+    <div class="container">
+      <div class="row"> 
+        <!--Movie Thumbnail & Gen Info-->
+        <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-down" data-aos-delay="100">
+          <img src="<%= movie.image %>" alt="Image" class="img-fluid w-100" id="moviePoster">
+          <div class="p-3 bg-white">
+            <h2 class="font-weight-bold text-primary text-uppercase" id="movieTitle"><%= movie.title %></h2>
+            <span class="d-block text-secondary small text-uppercase" id="subInfo">RATED <%= movie.rating %> | <%= movie.runtime %></span>
+          </div>
+        </div>
+        <!--Movie Thumbnail & Gen Info-->  
+          
+          <!--Schedule Table & Synopsis-->
+          <div class="col-sm-12 col-md-12 col-lg-8 mb-5" data-aos="fade-down" data-aos-delay="100">
+              <div class="row justify-content-center"> 
+                  <p class="text-white text-justify px-3 pt-2 pb-2" id="movieSynopsis">
+                        <%= movie.synopsis %>
+                  </p>
+                  
+                  <div class="col-md-12 col-lg-12 col-sm-12 mb-5" data-aos="fade-down" data-aos-delay="100">
+                    <table class="table table-hover table-light text-dark text-center align-middle mw-100" id="schedules">
+                      
+                      <thead>
+                        <tr >
+                            <th scope="col">SCHEDULE</th>
+                            <th scope="col">CINEMA</th>
+                            <th scope="col">PRICE</th>
+                            <th scope="col"></th>
+                        </tr>
+                        <% schedules.forEach(function(sched) { %>
+                        <tr>
+                          <td><%= sched.sched%></td>
+                          <td><%= sched.cinema%></td>
+                          <td><%= sched.price%></td>
+                          <td>
+                            <a href="/movies/seats/<%= sched._id %>">
+                              <button type="button" class="btn btn-sucess text-dark">Select</button>
+                            </a>
+                          </td>
+                        </tr>
+                        <% }) %>
+                      </thead>
+                      
+                    </table>
+                </div>
+              </div>
+          </div>
+          <!--Schedule Table & Synopsis-->
+        </div>
+    </div>
+  </div>
+    
+<%- include('partials/footer') %>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/mediaelement-and-player.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/circleaudioplayer.js"></script>
+    <script src="js/main.js"></script>
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="js/reservation.js"></script>
+
+</body>
+
+</html>

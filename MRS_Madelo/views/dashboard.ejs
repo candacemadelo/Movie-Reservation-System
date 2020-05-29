@@ -1,0 +1,149 @@
+<%- include('partials/header') %>  
+<!--last: styles.css-->
+
+    <link rel="stylesheet" href="/css/tables.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/animate.css">
+
+</head>
+
+<body>
+    
+<%- include('partials/navbar') %>
+    
+<!-- User Info and Reservations -->
+    <div class="container-fluid pt-4" data-aos="fade-down" data-aos-delay="100">
+        <div class="row px-3 pb-5">
+            
+            <!-- User Info -->
+            <div class="col-sm-12 col-md-12 col-lg-4 pt-4">
+                <div class="card w-100 h-100 px-0" style="height: 550px">
+                    <div class="card-body">
+                        <div class="mx-5 my-5">
+                            <img src="/images/user.png" class="img-fluid">
+                        </div>
+                        <div class="text-center text-dark">
+                            <h3 class="font-weight-bold pb-3">
+                                JANE DOE
+                            </h3>
+                            <div class="text-detail pb-5" id="resCounter">
+                                Hi, there! Browse through your reservations.
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- User Info -->
+
+            <!-- User Reservations -->
+            <div class="col-sm-12 col-md-12 col-lg-8 pt-4">
+                <div class="card w-100 h-100 px-0" style="height: 550px">
+                    <div class="card-body text-dark pt-5">
+                        <table class="table table-hover table-light text-dark text-center align-middle" id="reservations">
+                            <h3 class="font-weight-bold pb-5 pt-2 text-center">YOUR RESERVATIONS</h3>
+                              <thead class="pt-3">
+                                <tr>
+                                    <th scope="col">MOVIE TITLE</th>
+                                    <th scope="col">SCHEDULE</th>
+                                    <th scope="col">CINEMA</th>
+                                    <th scope="col">ADMISSIONS</th>
+                                    <th scope="col">TOTAL</th>
+                                    <th scope="col"></th>
+                                </tr>
+                              </thead>
+                              <% reserve.forEach(function(res) {%>
+                                <tr>
+                                    <th scope="col"><%= res.title %></th>
+                                    <th scope="col"><%= res.schedule %></th>
+                                    <th scope="col"><%= res.cinemaNo %></th>
+                                    <th scope="col"><%= res.quantity %></th>
+                                    <th scope="col"><%= res.totalPrice %></th>
+                                    <th scope="col">
+                                        <form action="/deleteRes/<%= res._id %>?_method=DELETE" method="POST">
+                                            <button type="submit" value="<%= res._id %>" class="btn btn-success text-white" data-toggle="modal" data-target="#confirmModal">Delete</button>
+                                        </form>
+                                    </th>
+                                </tr>
+                             <% }) %>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- User Reservations -->
+        </div>
+    </div>
+<!-- User Info and Reservations -->
+    
+    
+<!-- Confirmation Modal -->
+    <div id="confirmModal" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered modal-confirm col-sm-12 mx-auto w-100">
+            <div class="modal-content">
+                <div class="pb-4 pt-2">
+                    <div class="icon-box-alert">
+                        <i class="fas fa-exclamation"></i>
+                    </div>				
+                    <h4 class="text-center">Oops!</h4>	
+                </div>
+                <div class="modal-body pt-3">
+                    <p>Are you sure you want to cancel this reservation?</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="container pt-4">
+                        <div class="row pb-2">
+                            <div class="col">
+                                <button class="btn btn-danger btn-block" data-dismiss="modal" data-toggle="modal" data-target="#cancelledModal" id="confirmCancel">Confirm</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-secondary btn-block text-dark" data-dismiss="modal">Back</button>
+                            </div>
+                        </div>  
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>  
+<!-- Confirmation Modal -->
+ 
+<!-- Cancellation Modal -->
+    <div id="cancelledModal" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered modal-confirm col-sm-12 mx-auto w-100">
+            <div class="modal-content">
+                <div class="pb-4 pt-2">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>				
+                    <h4 class="text-center">As you wish.</h4>	
+                </div>
+                <div class="modal-body pt-3">
+                    <p>Your reservation has been cancelled.</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="container pt-4">
+                        <div class="row pb-2">
+                            <div class="col">
+                                <button class="btn btn-success btn-hover btn-block" data-dismiss="modal" style="background: #82ce34;">OK</button>   
+                            </div>
+                        </div>  
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>  
+<!-- Cancellation Modal -->
+    
+    
+    <%- include('partials/footer') %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!-- <script src="js/dashboard.js"></script>  -->
+
+</body>
+
+</html>
